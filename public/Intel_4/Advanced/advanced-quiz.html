@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📘 Advanced English Quiz</h1>
+        <nav>
+            <a href="grammar.html" class="active">Grammar</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="comprehension.html">Comprehension</a>
+        </nav>
+    </header>
+    
+    <section class="quiz-container">
+        <h2>🔍 Test Your Knowledge!</h2>
+        <p><strong>Complete the quiz before the timer runs out! ⏳</strong></p>
+       
+        
+        <form id="quizForm">
+            
+            <p>1. Which sentence is in the passive voice?</p>
+            <input type="radio" name="q1" value="She wrote a beautiful poem."> She wrote a beautiful poem.<br>
+            <input type="radio" name="q1" value="A beautiful poem was written by her."> A beautiful poem was written by her.<br>
+            <input type="radio" name="q1" value="She is writing a beautiful poem."> She is writing a beautiful poem.<br>
+            
+            <p>2. Identify the correct conditional sentence:</p>
+            <input type="radio" name="q2" value="If she will study, she would pass."> If she will study, she would pass.<br>
+            <input type="radio" name="q2" value="If she studies, she will pass."> If she studies, she will pass.<br>
+            <input type="radio" name="q2" value="If she studied, she will pass."> If she studied, she will pass.<br>
+            
+            <p>3. What is the synonym of 'meticulous'?</p>
+            <input type="radio" name="q3" value="Careless"> Careless<br>
+            <input type="radio" name="q3" value="Precise"> Precise<br>
+            <input type="radio" name="q3" value="Lazy"> Lazy<br>
+            
+            <p>4. Which word is a conjunction?</p>
+            <input type="radio" name="q4" value="Although"> Although<br>
+            <input type="radio" name="q4" value="Quickly"> Quickly<br>
+            <input type="radio" name="q4" value="Smart"> Smart<br>
+            
+            <p>5. Choose the correct sentence:</p>
+            <input type="radio" name="q5" value="Neither of the answers are correct."> Neither of the answers are correct.<br>
+            <input type="radio" name="q5" value="Neither of the answers is correct."> Neither of the answers is correct.<br>
+            <input type="radio" name="q5" value="Neither of the answers were correct."> Neither of the answers were correct.<br>
+            
+            <br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+    </section>
+    
+</body>
+</html>

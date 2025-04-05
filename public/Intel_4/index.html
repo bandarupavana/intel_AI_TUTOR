@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Hub</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📚 Welcome to the English Learning Platform for 4th - 8th</h1>
+    </header>
+
+    <div class="container">
+        <button id="beginner" onclick="window.location.href='beginner/grammar.html'">Beginner</button>
+        <button id="intermediate" onclick="window.location.href='intermediate/grammar.html'" disabled>Intermediate <span class="locked">🔒</span></button>
+        <button id="advanced" onclick="window.location.href='advanced/grammar.html'" disabled>Advanced <span class="locked">🔒</span></button>
+        <script>
+          const level = localStorage.getItem("userLevel");
+        
+          if (level === "Intermediate" || level === "Advanced") {
+            document.getElementById("intermediateBtn").disabled = false;
+          }
+          if (level === "Advanced") {
+            document.getElementById("advancedBtn").disabled = false;
+          }
+        </script>
+        
+    </div>
+    <button onclick="goBack()">⬅️ Back</button>
+
+
+    <script>
+          const userLevel = localStorage.getItem("userLevel");
+
+if (userLevel === "Intermediate") {
+  document.getElementById("intermediateContent").style.display = "block";
+}
+if (userLevel === "Advanced") {
+  document.getElementById("intermediateContent").style.display = "block";
+  document.getElementById("advancedContent").style.display = "block";
+}
+    function goBack() {
+      window.location.href = "../select-grade.html";
+    }
+    </script>
+    
+</body>
+</html>

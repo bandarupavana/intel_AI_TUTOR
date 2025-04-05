@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Quiz</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script defer src="../scripts/beginner.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📚 Beginner Level Quiz</h1>
+    </header>
+
+    <div class="container">
+        <form id="quizForm">
+            <p>1. What is the correct article for '__ apple'?</p>
+            <input type="radio" name="q1" value="a"> a
+            <input type="radio" name="q1" value="an"> an
+            <input type="radio" name="q1" value="the"> the
+
+            <p>2. What is the synonym of 'Happy'?</p>
+            <input type="radio" name="q2" value="Sad"> Sad
+            <input type="radio" name="q2" value="Joyful"> Joyful
+            <input type="radio" name="q2" value="Angry"> Angry
+
+            <p>3. What does John love to do?</p>
+            <input type="radio" name="q3" value="Sing"> Sing
+            <input type="radio" name="q3" value="Play football"> Play football
+            <input type="radio" name="q3" value="Read books"> Read books
+
+            <br><br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+    </div>
+
+    <!-- Chatbot Section -->
+    <div id="chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <span>Chatbot 🤖</span>
+        </div>
+        <div id="chatbox" class="chatbox">
+            <div class="message bot-message">
+                Hi! I'm here to guide you. Let's check your quiz results after you finish.
+            </div>
+        </div>
+        <input id="chat-input" type="text" placeholder="Ask me anything..." onkeypress="sendMessage(event)">
+        <button id="chat-send" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+            
+            let correctAnswers = 0;
+            
+            if (q1 && q1.value === 'an') correctAnswers++;
+            if (q2 && q2.value === 'Joyful') correctAnswers++;
+            if (q3 && q3.value === 'Read books') correctAnswers++;
+            
+            let feedbackMessage = '';
+            if (correctAnswers >= 2) {
+                // If they pass, save progress to localStorage
+                localStorage.setItem('beginnerPassed', 'true');
+                feedbackMessage = 'Congratulations! 🎉 You passed the Beginner level! Now, you can access the Intermediate level.';
+                window.location.href = '../index.html'; // Redirect to the main page
+            } else {
+                feedbackMessage = 'Better luck next time! Try again, and don’t worry, you can do it!';
+            }
+            
+            // Show feedback in the chatbot
+            showChatbotMessage(feedbackMessage);
+        }
+
+        function showChatbotMessage(message) {
+            const chatbox = document.getElementById("chatbox");
+            const newMessage = document.createElement("div");
+            newMessage.classList.add("message", "bot-message");
+            newMessage.textContent = message;
+            chatbox.appendChild(newMessage);
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+
+        // Handle user input in the chatbot
+        function sendMessage(event) {
+            if (event && event.key !== 'Enter') return; // Ensure Enter key is pressed
+            const inputField = document.getElementById("chat-input");
+            const userMessage = inputField.value.trim();
+            if (userMessage) {
+                const chatbox = document.getElementById("chatbox");
+                const newUserMessage = document.createElement("div");
+                newUserMessage.classList.add("message", "user-message");
+                newUserMessage.textContent = userMessage;
+                chatbox.appendChild(newUserMessage);
+                chatbox.scrollTop = chatbox.scrollHeight;
+
+                // Clear input field
+                inputField.value = '';
+                
+                // Simulate a response
+                setTimeout(() => showChatbotMessage("Great question! Keep going! 📚"), 1000);
+            }
+        }
+    </script>
+
+</body>
+</html>

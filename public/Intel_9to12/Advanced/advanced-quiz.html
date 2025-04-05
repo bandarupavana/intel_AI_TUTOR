@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>📝 Advanced Quiz</h2>
+        <form id="quizForm">
+            <p>1. What is the correct form of the verb in the following sentence: "If she __ the homework, she will pass the exam."</p>
+            <input type="radio" name="q1" value="a"> do  
+            <input type="radio" name="q1" value="b"> does  
+            <input type="radio" name="q1" value="c"> did  
+
+            <p>2. Choose the correct sentence:</p>
+            <input type="radio" name="q2" value="a"> He has visited Paris last year.  
+            <input type="radio" name="q2" value="b"> He visited Paris last year.  
+
+            <p>3. What is the meaning of the word "exuberant"?</p>
+            <input type="radio" name="q3" value="a"> Sad  
+            <input type="radio" name="q3" value="b"> Energetic and enthusiastic  
+            <input type="radio" name="q3" value="c"> Quiet  
+
+            <br><br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+
+        <!-- Chatbot window -->
+        <div id="chatbot" style="display: none;">
+            <div id="chatbotMessage"></div>
+            <button onclick="closeChatbot()">Close</button>
+        </div>
+        <p id="result"></p>
+    </div>
+</body>
+</html>

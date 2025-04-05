@@ -1,0 +1,49 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Quiz for Kids (KG - Grade 3)</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📝 Fun Quiz for Kids</h1>
+        <nav>
+            <a href="grammar.html" class="active">Grammar</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="comprehension.html">Comprehension</a>
+        </nav>
+    </header>
+    
+    <section class="quiz-container">
+        <p><strong>Answer the questions and have fun! 🎉</strong></p>
+        
+        <form id="quizForm">
+            <p>1. What is the name of a person, place, or thing?</p>
+            <input type="radio" name="q1" value="a"> Verb <br>
+            <input type="radio" name="q1" value="b"> Noun <br>
+            <input type="radio" name="q1" value="c"> Adjective <br>
+
+            <p>2. What is the action word in this sentence? <br> "The dog jumps."</p>
+            <input type="radio" name="q2" value="a"> Dog <br>
+            <input type="radio" name="q2" value="b"> Jumps <br>
+            <input type="radio" name="q2" value="c"> The <br>
+
+            <p>3. What is the color word in this sentence? <br> "I have a blue car."</p>
+            <input type="radio" name="q3" value="a"> Blue <br>
+            <input type="radio" name="q3" value="b"> Car <br>
+            <input type="radio" name="q3" value="c"> Have <br>
+
+            <br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+    </section>
+
+    <div id="chatbot" class="chatbot-container" style="display: none;">
+        <p id="chatbotMessage"></p>
+        <button onclick="closeChatbot()">Close</button>
+    </div>
+</body>
+</html>

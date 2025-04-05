@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Comprehension Practice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📖 English Learning Hub - Comprehension</h1>
+        <nav>
+            <a href="grammar.html">Grammar</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="comprehension.html" class="active">Comprehension</a>
+        </nav>
+    </header>
+    <div class="quiz-container">
+        <h2>Advanced Comprehension Practice – Emotional Conflict & Implied Meaning</h2>
+
+        <div class="question">
+            <h3>📝 Reading Passage:</h3>
+            <p>
+                As the applause faded, Eleanor stood motionless behind the curtain. Her name had been called, but she hesitated.
+                Years of preparation, sacrifice, and ambition had led to this moment—a prestigious award for contributions to humanitarian work.
+                But the weight of her silence over the past year lingered like a stone in her chest. She had seen things, known things.
+                People praised her efforts, but they didn’t know the whole truth. They didn’t know about the young girl who had vanished
+                from the village she had visited. Eleanor did nothing. Not because she didn’t care—but because she feared consequences.
+                And now, as she stepped into the spotlight, the applause felt more like an accusation than admiration.
+            </p>
+        </div>
+
+        <div class="question">
+            <h3>🔍 Comprehension Questions:</h3>
+            <strong>Literal Understanding:</strong>
+            <ol>
+                <li>Why is Eleanor receiving an award?</li>
+                <li>What significant event is she recalling from the past year?</li>
+            </ol>
+
+            <strong>Interpretive/Inferred:</strong>
+            <ol start="3">
+                <li>What is the symbolic meaning of “the applause felt more like an accusation”?</li>
+                <li>What inner conflict is Eleanor facing?</li>
+                <li>Why might Eleanor have chosen to remain silent about the girl’s disappearance?</li>
+            </ol>
+
+            <strong>Critical Thinking:</strong>
+            <ol start="6">
+                <li>Do you think Eleanor deserves the award? Justify your answer.</li>
+                <li>How might this experience change Eleanor’s future actions?</li>
+            </ol>
+        </div>
+
+        <div class="question">
+            <h3>✍️ Writing Task:</h3>
+            <p>
+                Write a paragraph from Eleanor’s point of view starting with:<br>
+                <em>“Everyone thinks they know me, but the truth is…”</em>
+            </p>
+        </div>
+
+        <button onclick="showChatbot()">Need help?</button>
+
+        <div id="chatbot">
+            <span class="close-btn" onclick="closeChatbot()">×</span>
+            <div id="chatbotMessage">
+                Tip: Try to put yourself in Eleanor’s shoes and think about her emotions—fear, guilt, pressure. Use complex sentence structures!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showChatbot() {
+            document.getElementById("chatbot").style.display = "block";
+        }
+
+        function closeChatbot() {
+            document.getElementById("chatbot").style.display = "none";
+        }
+    </script>
+            </div>
+
+            <button class="next-btn" onclick="window.location.href='grammar.html'">Next: grammar →</button>
+        </div>
+</body>
+</html>

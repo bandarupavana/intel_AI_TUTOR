@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Level Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📝 Beginner Level Quiz</h1>
+        <nav>
+            <a href="grammar.html" class="active">Grammar</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="comprehension.html">Comprehension</a>
+        </nav>
+    </header>
+    
+    <section class="quiz-container">
+        <p><strong>Answer the questions correctly to pass! 🎯</strong></p>
+        
+        <form id="quizForm">
+            <p>1. Which sentence is correct?</p>
+            <input type="radio" name="q1" value="a"> If I was you, I would go.<br>
+            <input type="radio" name="q1" value="b"> If I were you, I would go.<br>
+            <input type="radio" name="q1" value="c"> If I am you, I would go.<br>
+            
+            <p>2. What does "to break the ice" mean?</p>
+            <input type="radio" name="q2" value="a"> To start a conversation<br>
+            <input type="radio" name="q2" value="b"> To break something cold<br>
+            <input type="radio" name="q2" value="c"> To stay silent<br>
+            
+            <p>3. What does "to have an impact" mean?</p>
+            <input type="radio" name="q3" value="a"> To ignore something<br>
+            <input type="radio" name="q3" value="b"> To influence something<br>
+            <input type="radio" name="q3" value="c"> To avoid something<br>
+            
+            <br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+    </section>
+    
+    <div id="chatbot" class="chatbot-container" style="display: none;">
+        <p id="chatbotMessage"></p>
+        <button onclick="closeChatbot()">Close</button>
+    </div>
+</body>
+</html>

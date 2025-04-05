@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate English Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>📝 Intermediate English Quiz</h1>
+        
+    </header>
+    <section class="quiz-container">
+        <h2>📌 Test Your Knowledge!</h2>
+        <nav>
+            <a href="grammar.html" class="active">Grammar</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="comprehension.html">Comprehension</a>
+        </nav>
+        <form id="quizForm">
+            <p>1. Which sentence is correct?</p>
+            <input type="radio" name="q1" value="He don't like apples."> He don't like apples.
+            <input type="radio" name="q1" value="He doesn't like apples."> He doesn't like apples.
+            <input type="radio" name="q1" value="He not likes apples."> He not likes apples.
+
+            <p>2. What is the correct past participle of 'swim'?</p>
+            <input type="radio" name="q2" value="Swimmed"> Swimmed
+            <input type="radio" name="q2" value="Swam"> Swam
+            <input type="radio" name="q2" value="Swum"> Swum
+
+            <p>3. Choose the sentence with correct subject-verb agreement.</p>
+            <input type="radio" name="q3" value="The team are winning."> The team are winning.
+            <input type="radio" name="q3" value="The team is winning."> The team is winning.
+            <input type="radio" name="q3" value="The team win."> The team win.
+
+            <p>4. What does 'hit the books' mean?</p>
+            <input type="radio" name="q4" value="To physically hit books"> To physically hit books
+            <input type="radio" name="q4" value="To start studying seriously"> To start studying seriously
+            <input type="radio" name="q4" value="To throw books away"> To throw books away
+
+            <p>5. Identify the correctly punctuated sentence.</p>
+            <input type="radio" name="q5" value="Its a beautiful day!"> Its a beautiful day!
+            <input type="radio" name="q5" value="It's a beautiful day!"> It's a beautiful day!
+            <input type="radio" name="q5" value="Its' a beautiful day!"> Its' a beautiful day!
+
+            <br><br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+    </section>
+</body>
+</html>

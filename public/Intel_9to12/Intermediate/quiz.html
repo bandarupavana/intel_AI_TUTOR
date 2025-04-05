@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>📝 Intermediate Quiz</h2>
+        <form id="quizForm">
+            <p>1. Which sentence is correct?</p>
+            <input type="radio" name="q1" value="a"> If I was you, I would go.  
+            <input type="radio" name="q1" value="b"> If I were you, I would go.  
+
+            <p>2. What does 'Break the ice' mean?</p>
+            <input type="radio" name="q2" value="a"> To start a conversation  
+            <input type="radio" name="q2" value="b"> To break something physically  
+
+            <p>3. What does "affect" mean?</p>
+            <input type="radio" name="q3" value="a"> A result of an action  
+            <input type="radio" name="q3" value="b"> To influence something  
+
+            <br><br>
+            <button type="button" onclick="checkQuiz()">Submit</button>
+        </form>
+
+        <!-- Chatbot window -->
+        <div id="chatbot" style="display: none;">
+            <div id="chatbotMessage"></div>
+            <button onclick="closeChatbot()">Close</button>
+        </div>
+        <p id="result"></p>
+    </div>
+</body>
+</html>

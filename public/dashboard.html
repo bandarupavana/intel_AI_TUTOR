@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Your Level</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome!</h2>
+
+    <label>Which grade are you in?</label>
+    <select id="gradeSelect">
+      <option value="Intel_kgto3">KG to 3rd</option>
+      <option value="Intel_4">4th to 8th</option>
+      <option value="Intel_9to12">9th to 12th</option>
+    </select>
+
+    <label>Do you know your level?</label>
+    <select id="levelKnown">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+
+    <div id="levelSection" style="display:none;">
+      <label>Select Level:</label>
+      <select id="levelSelect">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+      </select>
+    </div>
+
+    <div id="quizSection" style="display:none;">
+      <p>Answer these questions to determine your level:</p>
+      <div id="questions"></div>
+    </div>
+
+    <p id="result" style="display:none;"></p>
+
+    <button onclick="goToContent()">Go to My Content</button>
+  </div>
+
+  <script>
+    const quizData = {
+      Intel_kgto3: {
+        q1: { question: "1. What is 2 + 3?", answer: "5" },
+        q2: { question: "2. What comes after the letter 'D'?", answer: "E" },
+        q3: { question: "3. IQ: If a cat has 4 legs, how many legs do 3 cats have?", answer: "12" }
+      },
+      Intel_4: {
+        q1: { question: "1. What is 15 ÷ 3?", answer: "5" },
+        q2: { question: "2. What is the past tense of 'run'?", answer: "ran" },
+        q3: { question: "3. IQ: What number completes the pattern: 3, 6, 9, ___?", answer: "12" }
+      },
+      Intel_9to12: {
+        q1: { question: "1. What is the square root of 49?", answer: "7" },
+        q2: { question: "2. What is a synonym of 'ancient'?", answer: "old" },
+        q3: { question: "3. IQ: What comes next: M, T, W, T, F, ___?", answer: "S" }
+      }
+    };
+
+    document.getElementById("levelKnown").onchange = function () {
+      const known = this.value;
+      document.getElementById("levelSection").style.display = known === "yes" ? "block" : "none";
+      document.getElementById("quizSection").style.display = known === "no" ? "block" : "none";
+
+      if (known === "no") {
+        const grade = document.getElementById("gradeSelect").value;
+        const quiz = quizData[grade];
+        const questionsDiv = document.getElementById("questions");
+        questionsDiv.innerHTML = ""; // Clear previous
+
+        let i = 1;
+        for (let key in quiz) {
+          questionsDiv.innerHTML += `<input id="q${i}" placeholder="${quiz[key].question}" /><br>`;
+          i++;
+        }
+      }
+    };
+
+    async function goToContent() {
+      const grade = document.getElementById("gradeSelect").value;
+      let level = document.getElementById("levelSelect").value;
+      let quizResults = [];
+
+      if (document.getElementById("levelKnown").value === "no") {
+        // Quiz-based evaluation
+        const quiz = quizData[grade];
+        let correct = 0;
+        let i = 1;
+        for (let key in quiz) {
+          const userAnswer = document.getElementById(`q${i}`).value.trim().toLowerCase();
+          const correctAnswer = quiz[key].answer.trim().toLowerCase();
+          quizResults.push({ question: quiz[key].question, userAnswer, correctAnswer });
+          if (userAnswer === correctAnswer) correct++;
+          i++;
+        }
+
+        if (correct === 3) level = "Advanced";
+        else if (correct === 2) level = "Intermediate";
+        else level = "Beginner";
+
+        document.getElementById("result").innerText = `You got ${correct}/3 correct. You are assigned to level: ${level}`;
+        document.getElementById("result").style.display = "block";
+      }
+
+      // Save user data locally
+      localStorage.setItem("userGrade", grade);
+      localStorage.setItem("userLevel", level);
+
+      // Optional: Send to server if you have backend
+      try {
+        await fetch("/updateProgress", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            username: localStorage.getItem("currentUser"),
+            grade,
+            level,
+            quizResults
+          })
+        });
+      } catch (err) {
+        console.error("Progress update failed", err);
+      }
+
+      // ✅ Redirect to correct grade and level page
+      window.location.href = `${grade}/${level}/grammar.html`;
+    }
+  </script>
+</body>
+</html>

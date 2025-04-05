@@ -1,0 +1,116 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grammar - Advanced English (Grades 4-8)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📘 Grammar Lessons (Grades 4-8)</h1>
+        <nav>
+            <a href="comprehension.html">Comprehension</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="quiz.html">Quizzes</a>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>🔤 Advanced Grammar Topics</h2>
+
+        <article>
+            <h3>1. Types of Sentences</h3>
+            <p>There are four types of sentences, each serving a unique purpose:</p>
+            <ul>
+                <li><strong>Declarative:</strong> States a fact or opinion. (e.g., The Amazon rainforest is home to diverse wildlife.)</li>
+                <li><strong>Interrogative:</strong> Asks a question. (e.g., Why do birds migrate in winter?)</li>
+                <li><strong>Imperative:</strong> Gives a command or request. (e.g., Please complete your homework on time.)</li>
+                <li><strong>Exclamatory:</strong> Expresses strong emotion. (e.g., Wow! That roller coaster was thrilling!)</li>
+            </ul>
+            <p><strong>Practice:</strong> Convert the following sentences into different types:</p>
+            <ul>
+                <li>She loves reading mystery novels. (Change to an interrogative sentence)</li>
+                <li>Close the window before it rains. (Change to an exclamatory sentence)</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>2. Subject-Verb Agreement</h3>
+            <p>The subject and verb must always match in number:</p>
+            <ul>
+                <li>Singular: The cat <strong>sleeps</strong> on the sofa.</li>
+                <li>Plural: The cats <strong>sleep</strong> on the sofa.</li>
+                <li>Incorrect: The cat <strong>sleep</strong> on the sofa.</li>
+            </ul>
+            <p><strong>Special Cases:</strong></p>
+            <ul>
+                <li><strong>Indefinite Pronouns:</strong> Words like "everyone" and "nobody" are singular. (e.g., Everyone <strong>enjoys</strong> the holiday.)</li>
+                <li><strong>Compound Subjects:</strong> When joined by "and," the subject is plural. (e.g., Alex and Mia <strong>love</strong> hiking.)</li>
+                <li><strong>Either/Neither:</strong> If followed by "or" or "nor," the verb agrees with the closest subject. (e.g., Neither the teacher nor the students <strong>are</strong> absent.)</li>
+            </ul>
+            <p><strong>Exercise:</strong> Choose the correct verb:</p>
+            <ul>
+                <li>The basket of apples (is/are) on the table.</li>
+                <li>Either my mom or my dad (drives/drive) me to school.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>3. Tenses and Their Usage</h3>
+            <p>There are three main tenses, each with different forms:</p>
+            <ul>
+                <li><strong>Past:</strong> Actions that happened before now. (e.g., She <strong>visited</strong> the museum last week.)</li>
+                <li><strong>Present:</strong> Actions happening now. (e.g., She <strong>visits</strong> the museum every Saturday.)</li>
+                <li><strong>Future:</strong> Actions that will happen. (e.g., She <strong>will visit</strong> the museum next week.)</li>
+            </ul>
+            <p><strong>Perfect Tenses:</strong></p>
+            <ul>
+                <li><strong>Past Perfect:</strong> She <strong>had finished</strong> her work before dinner.</li>
+                <li><strong>Present Perfect:</strong> He <strong>has traveled</strong> to several countries.</li>
+                <li><strong>Future Perfect:</strong> By tomorrow, they <strong>will have completed</strong> the project.</li>
+            </ul>
+            <p><strong>Exercise:</strong> Rewrite the sentence in different tenses:</p>
+            <ul>
+                <li>She studies for her exams. (Change to past perfect)</li>
+                <li>They will go to the beach. (Change to present perfect)</li>
+            </ul>
+        </article>
+
+        <article>
+            <h3>4. Parts of Speech</h3>
+            <p>Every word in a sentence belongs to one of the eight parts of speech:</p>
+            <ul>
+                <li><strong>Noun:</strong> Names a person, place, or thing. (e.g., <em>Sarah, school, book</em>)</li>
+                <li><strong>Pronoun:</strong> Replaces a noun. (e.g., <em>he, she, they</em>)</li>
+                <li><strong>Verb:</strong> Shows action or state of being. (e.g., <em>run, jump, is</em>)</li>
+                <li><strong>Adjective:</strong> Describes a noun. (e.g., <em>beautiful, strong</em>)</li>
+                <li><strong>Adverb:</strong> Describes a verb, adjective, or another adverb. (e.g., <em>quickly, silently</em>)</li>
+                <li><strong>Preposition:</strong> Shows the relationship between a noun and another word. (e.g., <em>under, between</em>)</li>
+                <li><strong>Conjunction:</strong> Connects words or clauses. (e.g., <em>and, but</em>)</li>
+                <li><strong>Interjection:</strong> Expresses emotion. (e.g., <em>Wow! Oops!</em>)</li>
+            </ul>
+            <p><strong>Challenge:</strong> Identify the parts of speech in the sentence:</p>
+            <ul>
+                <li>The small dog ran <em>quickly</em> across the street.</li>
+                <li>Wow! That was an incredible performance.</li>
+            </ul>
+        </article>
+
+    </section>
+    <button onclick="completeLesson()">Mark as Complete</button>
+
+<script>
+function completeLesson() {
+  let completedLessons = JSON.parse(localStorage.getItem("completedLessons")) || [];
+  completedLessons.push("grammar");
+  localStorage.setItem("completedLessons", JSON.stringify(completedLessons));
+
+  alert("Lesson Completed! Progress Updated.");
+}
+</script>
+
+
+    <button class="next-btn" onclick="window.location.href='vocabulary.html'">Next: Vocabulary →</button>
+</body>
+</html>
